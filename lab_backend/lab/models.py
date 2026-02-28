@@ -24,7 +24,7 @@ class LabOrder(models.Model):
     ]
     test = models.ForeignKey(LabTest, on_delete=models.PROTECT, related_name="orders")
     patient_name = models.CharField(max_length=120)
-    status = models.CharField(max_length=20, choices=STATUS_CHOICES)
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="PROCESSING")
     result_summary = models.CharField(max_length=300, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
 
